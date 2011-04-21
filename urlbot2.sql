@@ -1,0 +1,1 @@
+CREATE TABLE ircurls (channel VARCHAR(255) NOT NULL, id INT NOT NULL AUTO_INCREMENT, time DATETIME, nick CHAR(16), url VARCHAR(255), title VARCHAR(255), description TEXT, PRIMARY KEY(channel,id));
