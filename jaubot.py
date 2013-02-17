@@ -17,7 +17,7 @@ ircbot.debug=debug
 server=("irc.kolumbus.fi",6667)
 nick="jaubot"
 name="Bot by Juha Autero <jautero@iki.fi>"
-channels=["#fsav_linux"]
+channels=["#helsinkihacklab"]
 
 bot=ircbot.Bot(nick=nick,channels=channels,name=name)
 bot.restart=0
