@@ -149,15 +149,15 @@ class UrlHandler:
 
         
 class DummyStore:
-    def __init__(self):
-        pass
-    def add_url(self,url,title=None,description=None,tags=None):
+    def __init__(self,quiet=True):
+        self.quiet=quiet
+    def add_url(self,url,title=None,tags=None,description=None,nick=None,channel=None):
         pass
         
 def init_bot(bot,urlstore=None):
     if not urlstore:
         urlstore=DummyStore()
-    urlhandler=UrlHandler(bot,urlstore)
+    urlhandler=UrlHandler(bot,urlstore,urlstore.quiet)
     bot.rule(urlhandler.bot_handle_url, 'url', r'^(.*)(https?://[^ ]*)(.*)$')
     
 def uninit_bot(bot):

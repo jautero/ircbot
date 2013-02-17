@@ -36,7 +36,7 @@ class reminderbot:
             bot=self.bot
         nick=origin.nick
         if not nick in self.absentnicks:
-            self.channelnicks.append(nick)
+            self.absentnicks.append(nick)
             
 def init_bot(bot):
     reminder=reminderbot(bot)

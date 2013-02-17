@@ -18,7 +18,7 @@ ircbot.debug=debug
 server=("irc.kolumbus.fi",6667)
 nick="jaubot"
 name="Bot by Juha Autero <jautero@iki.fi>"
-channels=["#helsinkihacklab"]
+channels=["#espoohacklab"]
 
 bot=ircbot.Bot(nick=nick,channels=channels,name=name)
 bot.restart=0
@@ -36,9 +36,10 @@ def leave(m, origin, args, text, bot=bot):
 bot.rule(invite,'invite',cmd="INVITE")
 bot.rule(leave,'leave',cmd="KICK")
 
-#urlstore=delistore.DeliciousUrlstore()
+urlstore=urlbot3.DummyStore(False)
 
-urlbot3.init_bot(bot)
+
+urlbot3.init_bot(bot,urlstore)
 pingbot.init_bot(bot)
 reminderbot.init_bot(bot)
 #pinky.init_bot(bot)
